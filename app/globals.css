@@ -1,35 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1a56db;
-  --color-primary-dark: #003fb1;
-  --color-secondary: #006c49;
-  --color-secondary-light: #0e9f6e;
-  --color-surface: #faf8ff;
-  --color-surface-container: #ededf8;
-  --color-surface-container-low: #f3f3fe;
-  --color-surface-container-lowest: #ffffff;
-  --color-on-surface: #191b23;
-  --color-on-surface-variant: #434654;
-  --color-outline-variant: #c3c5d7;
-  --color-error: #ba1a1a;
-  --color-error-container: #ffdad6;
+  --color-primary: #6777ef;
+  --color-primary-dark: #394eea;
+  --color-secondary: #cdd3d8;
+  --color-surface: #f4f6f9;
+  --color-on-surface: #34395e;
+  --color-on-surface-variant: #6c757d;
+  --color-success: #47c363;
+  --color-danger: #fc544b;
   
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
   
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f6f9;
+  --foreground: #34395e;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f4f6f9; /* Stisla typically stays light or has its own dark mode */
+    --foreground: #34395e;
   }
 }
 
@@ -37,4 +32,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+/* Stisla-specific utility classes */
+.stisla-card {
+  @apply bg-white rounded-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.03)] border-none mb-[30px];
+}
+
+.stisla-sidebar {
+  @apply w-[250px] bg-white fixed top-0 bottom-0 left-0 z-[880] shadow-[0_4px_8px_rgba(0,0,0,0.03)] transition-all duration-500;
+}
+
+.stisla-main-content {
+  @apply pl-[250px] pt-[80px] pr-[30px] pb-[40px] transition-all duration-500;
 }
