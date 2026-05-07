@@ -3,10 +3,12 @@ import { useState, useEffect, use } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import useToast from "@/lib/useToast";
 
 export default function EditPackage({ params }) {
   const { id } = use(params);
   const router = useRouter();
+  const { showToast, ToastComponent } = useToast();
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
@@ -47,7 +49,7 @@ export default function EditPackage({ params }) {
       .single();
     
     if (error) {
-      alert("Gagal memuat data paket.");
+      showToast("Gagal memuat data paket.", "error");
       router.push("/admin/packages");
     } else {
       setFormData(data);
@@ -65,9 +67,10 @@ export default function EditPackage({ params }) {
       .eq("id", id);
 
     if (error) {
-      alert("Gagal mengupdate paket: " + error.message);
+      showToast("Gagal mengupdate paket: " + error.message, "error");
     } else {
-      router.push("/admin/packages");
+      showToast("Paket berhasil diperbarui!");
+      setTimeout(() => router.push("/admin/packages"), 1000);
     }
     setLoading(false);
   };
@@ -187,6 +190,22 @@ export default function EditPackage({ params }) {
                     onChange={e => setFormData({ ...formData, group_size: e.target.value })}
                   />
                 </div>
+              </div>
+
+              <div className="pt-4 border-t border-gray-50">
+                <label className="flex items-center gap-3 cursor-pointer group w-fit">
+                  <div className="relative">
+                    <input 
+                      type="checkbox" 
+                      className="sr-only"
+                      checked={formData.is_popular}
+                      onChange={e => setFormData({ ...formData, is_popular: e.target.checked })}
+                    />
+                    <div className={`w-12 h-6 rounded-full transition-colors ${formData.is_popular ? 'bg-primary' : 'bg-gray-200'}`}></div>
+                    <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${formData.is_popular ? 'translate-x-6' : ''}`}></div>
+                  </div>
+                  <span className="text-sm font-bold text-on-surface">Tampilkan di "Paket Populer" (Halaman Utama)</span>
+                </label>
               </div>
             </div>
           </div>

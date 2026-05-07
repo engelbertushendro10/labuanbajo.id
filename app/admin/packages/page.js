@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import Link from "next/link";
+import useToast from "@/lib/useToast";
 
 export default function PackagesManagement() {
   const [packages, setPackages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { showToast } = useToast();
 
   useEffect(() => {
     fetchPackages();
@@ -18,7 +20,7 @@ export default function PackagesManagement() {
       .select("*, agents(name)");
     
     if (error) {
-      console.error("Error fetching packages:", error);
+      showToast("Gagal mengambil data paket.", "error");
     } else {
       setPackages(data || []);
     }
@@ -33,8 +35,9 @@ export default function PackagesManagement() {
         .eq("id", id);
       
       if (error) {
-        alert("Gagal menghapus paket.");
+        showToast("Gagal menghapus paket.", "error");
       } else {
+        showToast("Paket berhasil dihapus.");
         fetchPackages();
       }
     }

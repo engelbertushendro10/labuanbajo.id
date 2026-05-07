@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import useToast from "@/lib/useToast";
 
 export default function AgentsManagement() {
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { showToast } = useToast();
 
   useEffect(() => {
     fetchAgents();
@@ -18,7 +20,7 @@ export default function AgentsManagement() {
       .order("name", { ascending: true });
     
     if (error) {
-      console.error("Error fetching agents:", error);
+      showToast("Gagal mengambil data agen.", "error");
     } else {
       setAgents(data || []);
     }
@@ -32,8 +34,9 @@ export default function AgentsManagement() {
       .eq("id", id);
     
     if (error) {
-      alert("Gagal mengupdate status verifikasi.");
+      showToast("Gagal mengupdate status verifikasi.", "error");
     } else {
+      showToast(`Agen berhasil ${!currentStatus ? "diverifikasi" : "dibatalkan verifikasinya"}.`);
       fetchAgents();
     }
   }
