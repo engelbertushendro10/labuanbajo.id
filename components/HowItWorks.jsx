@@ -7,24 +7,24 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-surface-container-low relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-surface-container-low to-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Cara Kerja Verifikasi</h2>
-          <p className="text-on-surface-variant mt-2">Langkah mudah untuk perjalanan yang lebih aman</p>
+          <p className="text-gray-600 mt-2">Langkah mudah untuk perjalanan yang lebih aman</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-4 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+          {steps.map((step, idx) => (
+            <div key={idx} className="flex flex-col items-center text-center relative z-10">
+              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">
                 {step.number}
               </div>
               <h4 className="text-lg font-bold mb-2">{step.title}</h4>
-              <p className="text-sm text-on-surface-variant">{step.description}</p>
+              <p className="text-sm text-gray-600">{step.description}</p>
             </div>
           ))}
-          {/* Garis penghubung desktop */}
-          <div className="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 border-t-2 border-dashed border-primary/30 z-0" />
+          {/* Garis penghubung hanya tampil di desktop */}
+          <div className="hidden md:block absolute top-8 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         </div>
       </div>
     </section>

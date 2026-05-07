@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PopularPackages() {
   const [packages, setPackages] = useState([]);
@@ -19,47 +20,47 @@ export default function PopularPackages() {
       .eq("is_popular", true)
       .limit(3);
     
-    if (error) {
-      console.error("Error fetching popular packages:", error);
-    } else {
-      setPackages(data || []);
-    }
+    if (error) console.error(error);
+    else setPackages(data || []);
     setLoading(false);
   }
 
-  if (loading) return <div className="py-20 text-center text-primary font-bold">Memuat Paket Populer...</div>;
+  if (loading) {
+    return (
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-48 mb-10"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[1,2,3].map(i => <div key={i} className="h-64 bg-gray-200 rounded-xl"></div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (packages.length === 0) return null;
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              Paket Populer
-            </h2>
-            <p className="text-on-surface-variant mt-2">
-              Pilihan terbaik dari agen-agen terverifikasi kami.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Paket Populer</h2>
+            <p className="text-gray-600 mt-2">Pilihan terbaik dari agen-agen terverifikasi kami.</p>
           </div>
-          <Link
-            href="/paket"
-            className="hidden md:block text-primary font-semibold hover:underline"
-          >
-            Lihat Semua Paket
-          </Link>
+          <Link href="/paket" className="hidden md:block text-primary font-semibold hover:underline">Lihat Semua Paket →</Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto md:min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {packages.map((pkg, index) => {
             const isLarge = index === 0;
             return (
               <Link
                 key={pkg.id}
                 href={`/paket/${pkg.id}`}
-                className={`${
-                  isLarge ? "md:col-span-7" : "md:col-span-5"
-                } relative rounded-xl overflow-hidden group cursor-pointer min-h-[300px]`}
+                className={`${isLarge ? "md:col-span-7" : "md:col-span-5"} relative rounded-2xl overflow-hidden group cursor-pointer min-h-[300px] shadow-lg`}
               >
                 <img
                   src={pkg.images?.[0] || "/placeholder.jpg"}
@@ -72,19 +73,12 @@ export default function PopularPackages() {
                       ✅ Verified Agent
                     </span>
                   )}
-                  <h3 className={`${isLarge ? 'text-xl' : 'text-lg'} font-bold text-white mb-1`}>
-                    {pkg.title}
-                  </h3>
+                  <h3 className={`${isLarge ? 'text-2xl' : 'text-lg'} font-bold text-white mb-1`}>{pkg.title}</h3>
                   <p className="text-white/80 text-sm mb-4">{pkg.subtitle}</p>
                   {isLarge && (
                     <div className="flex justify-between items-center">
-                      <span className="text-white font-bold text-lg">
-                        {pkg.price}
-                        <span className="text-xs font-normal">/pax</span>
-                      </span>
-                      <span className="bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold">
-                        Detail Paket
-                      </span>
+                      <span className="text-white font-bold text-lg">{pkg.price} <span className="text-xs">/pax</span></span>
+                      <span className="bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold">Detail Paket</span>
                     </div>
                   )}
                 </div>
