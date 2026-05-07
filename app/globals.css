@@ -35,6 +35,16 @@ body {
   font-size: 14px;
 }
 
+/* Fix for unwanted focus borders */
+input:focus, 
+textarea:focus, 
+select:focus {
+  outline: none !important;
+  --tw-ring-color: transparent !important;
+  border-color: #6777ef !important;
+  box-shadow: 0 0 0 2px rgba(103, 119, 239, 0.2) !important;
+}
+
 /* Stisla-specific utility classes */
 .stisla-card {
   @apply bg-white rounded-[3px] shadow-[0_4px_8px_rgba(0,0,0,0.03)] border-none mb-[30px];
