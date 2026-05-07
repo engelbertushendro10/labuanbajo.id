@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#63dca6",
+                    "surface-container": "#ededf8",
+                    "surface-bright": "#faf8ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#d9dee7",
+                    "on-secondary-container": "#00714c",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#dee3ed",
+                    "surface-tint": "#1353d8",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "tertiary-fixed-dim": "#c1c7d0",
+                    "outline-variant": "#c3c5d7",
+                    "secondary": "#006c49",
+                    "outline": "#737686",
+                    "surface-variant": "#e2e1ed",
+                    "on-background": "#191b23",
+                    "background": "#faf8ff",
+                    "tertiary-container": "#5c626a",
+                    "surface-container-highest": "#e2e1ed",
+                    "secondary-container": "#7ef6be",
+                    "on-surface-variant": "#434654",
+                    "on-tertiary-fixed": "#161c23",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#81f9c1",
+                    "tertiary": "#444a52",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3fe",
+                    "on-primary-fixed-variant": "#003dab",
+                    "surface-dim": "#d9d9e4",
+                    "surface": "#faf8ff",
+                    "on-surface": "#191b23",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a56db",
+                    "on-tertiary-fixed-variant": "#41474f",
+                    "on-primary": "#ffffff",
+                    "primary": "#003fb1",
+                    "on-secondary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-high": "#e7e7f3",
+                    "inverse-primary": "#b5c4ff",
+                    "on-primary-container": "#d4dcff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-primary-fixed": "#00174d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2e3039"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "xxl": "80px",
+                    "sm": "8px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h3": ["Inter"],
+                    "caption": ["Inter"],
+                    "h1": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="bg-surface dark:bg-inverse-surface shadow-sm fixed top-0 w-full z-[100]">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<button class="text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim">LabuanBajo.id</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant"><span class="material-symbols-outlined">share</span></button>
+<button class="text-on-surface-variant"><span class="material-symbols-outlined">favorite</span></button>
+</div>
+</div>
+</header>
+<main class="pt-[64px] pb-[100px]">
+<!-- Gallery Slider -->
+<section class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar h-full">
+<div class="snap-center shrink-0 w-full h-full">
+<img class="w-full h-full object-cover" data-alt="A majestic wooden Phinisi schooner with elegant cream-colored sails gliding through the turquoise waters of Labuan Bajo under a clear tropical sky. The lighting is golden hour, casting soft warm glows on the polished teak deck. The atmosphere is luxurious and serene, embodying a high-end coastal minimalist aesthetic with professional blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyouFQlr649pyjOv38tmFsXtxp5uGPmEdBQfhvTVZz7hZG5z7FvKfZHyEhKXErRE3ItASJdAtoPUTJ03iNdIxfmptCsk1Nfh2cnFcmpudWblhteUCwsNdtuuZmI0KLuxDPWMSpOsiEnNYLrElkwnMboezxyHP-e17fozPIkKaLk6awu7DYMu-sOrzoDn-WfANMnoQIhwJxqa9TgrLhYtldyP3i1TWLXKAv4SZ1ELPgNNeHas8Z8Jf0LBhVByyo2JgCv171bho-X_4"/>
+</div>
+<div class="snap-center shrink-0 w-full h-full">
+<img class="w-full h-full object-cover" data-alt="The luxury master cabin of a Phinisi boat featuring a king-sized bed with crisp white linens and nautical blue accents. Large panoramic windows reveal the jagged limestone cliffs of Padar Island in the distance. The interior design is modern corporate meets tropical elegance, using natural wood textures and bright, high-key ambient lighting for a premium travel feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBlfsehPOnQt2lhtcCtApRMzT9FYFvDB3bgZKWJyOdnXICKNbrrc2nbbDU-k35lUqJpNfgQpVy88yxCttcep7g-dvH_IUedRSYGpIluSrHJ2xv_m2DRzdjAEP0k5ys_d7NYRGjjr51HPPv_KOQngaOu_-klVzYoTGimKy8IRvAFWAiM41dZuiB7suTeHpl98fvy4w-p31nBQJuN79CyyDnwir_I98NrUrSSsLStW1z0nSxgynIN84J5TdFaj0vqz498o9xFLNKV0U"/>
+</div>
+<div class="snap-center shrink-0 w-full h-full">
+<img class="w-full h-full object-cover" data-alt="A gourmet dining setup on the upper deck of a luxury vessel, featuring fresh tropical fruits and artisanal seafood platters. The table is set with professional minimalist tableware against the backdrop of a vibrant pink and orange sunset over the Flores Sea. The scene is illuminated by soft deck lights, creating an atmosphere of exclusive tropical integrity and security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Xb-KMbgcT38rjXmTNmgqeFbALChbXheW9bUoZVCchLFMLOCUNBdcWFj3eHVE_JaOmpSB5LFNEQRs3_9RoZgQD9GMcs0HzKmcCQ7eI6cvtho1Ik8AWXvaOS0_-JwUm-XTmqar49nsNDFbQUtuWprmj8EWtyXEyPEoolXc00UsoBP5zAN75EEeiWIjnzkeqryK85iC8UXVEQRTXi_6RCTOIqorcRv9opy2yEom1XCheu0Fj30w0UDaosdbfA34CibqSpYGcohMg1c"/>
+</div>
+</div>
+<div class="absolute bottom-md right-md bg-inverse-surface/80 text-surface px-md py-xs rounded-full font-label-md">
+                1 / 8
+            </div>
+</section>
+<!-- Product Header -->
+<section class="px-md py-lg bg-surface">
+<div class="flex justify-between items-start mb-sm">
+<h1 class="font-h2 text-h2 text-on-surface leading-tight">Open Trip 3D2N Kapal Phinisi Luxury</h1>
+</div>
+<div class="flex items-center gap-xs mb-md text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md">4.9 (128 Reviews)</span>
+<span class="text-outline mx-xs">•</span>
+<span class="font-label-md text-label-md">Labuan Bajo, Indonesia</span>
+</div>
+<!-- Features Grid -->
+<div class="grid grid-cols-4 gap-sm py-md border-y border-outline-variant">
+<div class="flex flex-col items-center gap-xs text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<span class="text-caption font-caption">3 Days</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-caption font-caption">Max 12</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="text-caption font-caption">All Meals</span>
+</div>
+<div class="flex flex-col items-center gap-xs text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">directions_boat</span>
+</div>
+<span class="text-caption font-caption">Luxury Class</span>
+</div>
+</div>
+</section>
+<!-- Verified Agency -->
+<section class="px-md py-lg">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="relative w-12 h-12">
+<img class="w-full h-full rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional circular logo for a premium travel agency featuring a minimalist silhouette of a Phinisi boat against a turquoise sea background. The design is clean and modern, using professional blue and white colors to convey trust and integrity. The logo is sharp and centered in a well-lit studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1XeDzvxfDo2hYVOZbDycb7V_F3oAEesCTzQF0FI2j2xjEKVHwMRrdH05qxB8FsMda_rH0f507avxIBjv0YM1UdI8gjAUUIeYAfAm_bvA5v4v7yeXXSJ5sRB-Xiz_s421kKwOTZiyPNde_cIF8b-iHruxOGmYEiMpvnwru62TXIa_gedkzJHeJK81RXz0yHxaA62kF_exjInxQoxXBigd-a_Dc5rr1-DWUJ0-Koj-7Igsq35KZz3BdLqxVl-jmRz1Ell8xamKsQMY"/>
+<div class="absolute -right-1 -bottom-1 bg-secondary text-on-secondary rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Bajo Elite Travels</p>
+<p class="text-caption font-caption text-secondary">Verified Agency</p>
+</div>
+</div>
+<button class="text-primary font-label-md px-md py-xs rounded-lg border border-primary">Follow</button>
+</div>
+</section>
+<!-- Itinerary Section -->
+<section class="px-md py-lg">
+<h2 class="font-h3 text-h3 mb-lg">Itinerary Details</h2>
+<div class="space-y-lg relative">
+<div class="absolute left-[15px] top-0 bottom-0 w-0.5 bg-outline-variant"></div>
+<!-- Day 1 -->
+<div class="relative pl-xl">
+<div class="absolute left-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary z-10">
+<span class="font-label-md">1</span>
+</div>
+<div class="bg-surface p-md rounded-xl shadow-sm">
+<h3 class="font-label-md text-primary mb-xs">DAY 1: KELOR &amp; KALONG</h3>
+<p class="text-body-sm text-on-surface-variant">Trekking on Kelor Island for panoramic views, followed by snorkeling in Manjarite. Sunset cruise at Kalong Island to see thousands of flying foxes.</p>
+<div class="mt-md rounded-lg overflow-hidden h-32">
+<img class="w-full h-full object-cover" data-alt="A panoramic view from the peak of Kelor Island looking down at the white sandy beach and crystal clear turquoise water. The lighting is bright midday sun, highlighting the vibrant colors of the coral reefs below. The aesthetic is tropical minimalism with high-end photographic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPkJevYW6lzdAnQDD7g6MdD9RxmyErOClMUb4GFcCm3OzOTDE3Ziob3IbBuAoRgluNB5scSBDGI8js1i5QKgQsL9Ik_2XQqNTPAZiojN3Jj9_JE_figTlYNmkgxXZ3IJ0qBLpYzT-YfHK65dQNRrwSfX8T4VF00_g8Ibpu9eTZGlSxRCrClpwZ1z9gj_XM7InEERwzK-_LOLTke-hgb2ry5T2YosSgRSg7zmFnvYiY0nFmNBbNs_NBQWyyMdktx5oSQBKOhW5Vjdg"/>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="relative pl-xl">
+<div class="absolute left-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary z-10">
+<span class="font-label-md">2</span>
+</div>
+<div class="bg-surface p-md rounded-xl shadow-sm">
+<h3 class="font-label-md text-primary mb-xs">DAY 2: PADAR &amp; KOMODO</h3>
+<p class="text-body-sm text-on-surface-variant">Early morning trek to Padar Island summit. Visit Pink Beach for relaxation and head to Komodo Island to witness the prehistoric dragons.</p>
+<div class="mt-md rounded-lg overflow-hidden h-32">
+<img class="w-full h-full object-cover" data-alt="A close-up high-quality photograph of a Komodo Dragon in its natural habitat on Komodo Island, with the rugged coastal landscape and blue sea in the background. The lighting is dramatic morning light, emphasizing the textures of the dragon's skin and the dry tropical savannah." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9MBh-p7nBlKBQOX3w1zTh-k8XrNae-8hQZck8ziULn2aETqPYXSgh4NG0VHeedQn1zsVA7w96tQwoTb9XGsZryDqlP1_2OL-J20rpjFOFkd32pMtUatl_6IayXxRkPGE4I9IvNo_RAMaXQZoRx6zg4s6auHfdhjUdi_pRxmTsUlt8H55uSNl6EmKDYSrqvN7sjMqx_LpHsVQYcwsXOAxWfWFijvvWw5bF24-mXU-Ks8ZCe5UjhAh_dQuE6CFNBI4LsBotNOb9mOI"/>
+</div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="relative pl-xl">
+<div class="absolute left-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary z-10">
+<span class="font-label-md">3</span>
+</div>
+<div class="bg-surface p-md rounded-xl shadow-sm">
+<h3 class="font-label-md text-primary mb-xs">DAY 3: MANTA POINT</h3>
+<p class="text-body-sm text-on-surface-variant">Snorkeling with Manta Rays at Manta Point and Taka Makassar. Return to Labuan Bajo harbor by late afternoon.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="px-md py-lg bg-surface-container-low">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-h3 text-h3">Guest Reviews</h2>
+<span class="text-primary font-label-md">See All</span>
+</div>
+<div class="flex overflow-x-auto gap-md hide-scrollbar pb-md">
+<!-- Review Card 1 -->
+<div class="min-w-[280px] bg-surface p-md rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center font-label-md text-on-tertiary-fixed">JS</div>
+<div>
+<p class="font-label-md text-sm">Jonathan S.</p>
+<div class="flex text-secondary text-[12px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-3">"An absolutely incredible experience. The boat was spotless and the staff were professional. LabuanBajo.id made verification easy!"</p>
+</div>
+<!-- Review Card 2 -->
+<div class="min-w-[280px] bg-surface p-md rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-label-md text-on-secondary-fixed">MR</div>
+<div>
+<p class="font-label-md text-sm">Maria R.</p>
+<div class="flex text-secondary text-[12px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-3">"Everything was perfect from the itinerary to the food. Highly recommended for anyone looking for a luxury experience."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Footer (Booking) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface dark:bg-inverse-surface px-md py-sm shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-[100] border-t border-outline-variant">
+<div class="flex justify-between items-center max-w-container-max mx-auto h-[64px]">
+<div class="flex flex-col">
+<span class="text-caption font-caption text-on-surface-variant">Total Price</span>
+<div class="flex items-baseline gap-xs">
+<span class="text-h3 font-h3 text-primary">IDR 7.500k</span>
+<span class="text-caption font-caption text-outline">/pax</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-label-md shadow-lg Active:scale-95 transition-transform duration-150">
+                Pesan Sekarang
+            </button>
+</div>
+</div>
+<!-- Floating Bottom Nav (Contextual Suppression) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-surface dark:bg-inverse-surface px-md py-sm md:hidden border-t border-outline-variant hidden">
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-fixed dark:bg-primary-container rounded-xl px-4 py-1">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">Overview</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">Itinerary</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Book Now</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full px-lg py-xxl flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant">
+<div class="mb-lg">
+<div class="font-h3 text-h3 text-primary dark:text-primary-fixed-dim mb-4">LabuanBajo.id</div>
+<p class="text-on-surface-variant font-body-sm">Professional Travel Verification Platform for Indonesia's Marine Wonders.</p>
+</div>
+<div class="grid grid-cols-2 gap-lg w-full md:w-auto">
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-primary">Company</span>
+<a class="text-on-surface-variant hover:text-primary font-body-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-primary">Support</span>
+<a class="text-on-surface-variant hover:text-primary font-body-sm" href="#">Agency Verification</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm" href="#">Contact Support</a>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-outline-variant w-full text-center">
+<p class="text-on-surface-variant font-body-sm">© 2024 LabuanBajo.id - Professional Travel Verification Platform. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

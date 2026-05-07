@@ -1,0 +1,12 @@
+supbase password database : @labuanbajoid
+
+sb_publishable_7U2LZyMwHwTATsAE4X_9LQ_qACpvnMK
+
+
+anon : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xeXV0bGZjeXBraGFjam5paXB4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwMzM4ODQsImV4cCI6MjA5MzYwOTg4NH0.AM7leQ6Bx7OzZqGDsqhaG6UuEwfrwCauGRtbNHAc9_Y
+
+Jadi NEXT_PUBLIC_SUPABASE_URL kamu adalah:
+
+https://nqyutlfcypkhacjniipx.supabase.co
+
+sb_publishable_7U2LZyMwHwTATsAE4X_9LQ_qACpvnMK

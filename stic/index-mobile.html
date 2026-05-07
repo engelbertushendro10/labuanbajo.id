@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wave-divider {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23000' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            mask-size: cover;
+            mask-repeat: no-repeat;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#63dca6",
+                    "surface-container": "#ededf8",
+                    "surface-bright": "#faf8ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#d9dee7",
+                    "on-secondary-container": "#00714c",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#dee3ed",
+                    "surface-tint": "#1353d8",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "tertiary-fixed-dim": "#c1c7d0",
+                    "outline-variant": "#c3c5d7",
+                    "secondary": "#006c49",
+                    "outline": "#737686",
+                    "surface-variant": "#e2e1ed",
+                    "on-background": "#191b23",
+                    "background": "#faf8ff",
+                    "tertiary-container": "#5c626a",
+                    "surface-container-highest": "#e2e1ed",
+                    "secondary-container": "#7ef6be",
+                    "on-surface-variant": "#434654",
+                    "on-tertiary-fixed": "#161c23",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#81f9c1",
+                    "tertiary": "#444a52",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3fe",
+                    "on-primary-fixed-variant": "#003dab",
+                    "surface-dim": "#d9d9e4",
+                    "surface": "#faf8ff",
+                    "on-surface": "#191b23",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a56db",
+                    "on-tertiary-fixed-variant": "#41474f",
+                    "on-primary": "#ffffff",
+                    "primary": "#003fb1",
+                    "on-secondary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-high": "#e7e7f3",
+                    "inverse-primary": "#b5c4ff",
+                    "on-primary-container": "#d4dcff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-primary-fixed": "#00174d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2e3039"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "xxl": "80px",
+                    "sm": "8px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h3": ["Inter"],
+                    "caption": ["Inter"],
+                    "h1": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-high/90 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-lg py-md">
+<span class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed-dim">🌊 LabuanBajo.id</span>
+<!-- Mobile Menu Toggle (Simplified for Design) -->
+<div class="md:hidden flex items-center gap-md">
+<button class="p-base active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-body-md text-primary dark:text-primary-fixed-dim font-semibold border-b-2 border-primary" href="#">Cek Agen</a>
+<a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors" href="#">Lapor Penipuan</a>
+<a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors" href="#">Tentang</a>
+<a class="font-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors" href="#">Kontak</a>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-surface-tint transition-all active:scale-95">Download App</button>
+</div>
+</div>
+</nav>
+<main class="mt-[72px]">
+<!-- Hero Section -->
+<section class="relative min-h-[751px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking panoramic view of Padar Island in Labuan Bajo, featuring three distinct turquoise bays separated by rugged green mountain ridges under a brilliant clear blue sky. The scene is bathed in vibrant, high-key tropical sunlight, creating a crisp and premium travel aesthetic. The composition is expansive, utilizing a soft blue and emerald green color palette to evoke a sense of security and paradise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj5yUI0biWzS4m-lcwqEbzRGU3bxF8skAPkNA3GgIR7k1otRmYCoI1n0JlIp4pjcKLhE4eJ5VyQMUMUrcnfrJtSwT4uAYTIHBYNziWBn7mSsXXUflGQuSfXyLtpvshn72t1cBys51zpreC7coNNTIsU8iJ9zT0aBIDHydqf0ei0PXOhodftgzuxZt1dbNxgQ9U03q45EJ5yYi1secU7fmzwsvyfSJjYoCn7CYEibNUTrSuDmrKYabbhc77pREoPoaL2O25rzrsTlE"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/10 to-surface"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max px-lg text-center md:text-left">
+<div class="max-w-2xl">
+<h1 class="font-h1 text-h1 text-on-primary mb-md drop-shadow-lg">Liburan Tenang, Agen Terverifikasi.</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-xl drop-shadow-md">Lindungi perjalanan impian Anda di Labuan Bajo. Cek keaslian agen wisata dan pesan dengan aman melalui platform resmi kami.</p>
+<!-- Search Bar (Cek Agen) -->
+<div class="bg-surface-container-lowest p-base rounded-xl shadow-lg flex flex-col md:flex-row gap-xs items-stretch md:items-center">
+<div class="flex-1 flex items-center px-md py-sm gap-sm">
+<span class="material-symbols-outlined text-primary">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md" placeholder="Masukkan nama agen atau ID verifikasi..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label-md hover:bg-surface-tint active:scale-95 transition-all">
+                            Cek Agen Sekarang
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Cards -->
+<section class="py-xxl bg-surface">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-lg rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container flex items-center justify-center rounded-lg mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm">Verifikasi Resmi</h3>
+<p class="font-body-md text-on-surface-variant">Basis data agen yang telah divalidasi langsung oleh otoritas pariwisata daerah untuk keamanan Anda.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-lg rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed flex items-center justify-center rounded-lg mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm">Booking Aman</h3>
+<p class="font-body-md text-on-surface-variant">Sistem pembayaran terproteksi yang menjamin dana Anda aman hingga perjalanan selesai.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-lg rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-error-container text-on-error-container flex items-center justify-center rounded-lg mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm">Lapor Kendala</h3>
+<p class="font-body-md text-on-surface-variant">Saluran darurat untuk melaporkan indikasi penipuan atau layanan yang tidak sesuai standar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Cara Kerja (Step Section) -->
+<section class="py-xxl bg-surface-container-low relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-16 bg-surface wave-divider"></div>
+<div class="max-w-container-max mx-auto px-lg mt-lg">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary">Cara Kerja Verifikasi</h2>
+<p class="font-body-md text-on-surface-variant">Langkah mudah untuk perjalanan yang lebih aman</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-h3 font-bold mb-md z-10">1</div>
+<h4 class="font-h3 text-body-lg font-bold mb-xs">Cari Agen</h4>
+<p class="font-body-sm text-on-surface-variant">Masukkan nama agen di kolom pencarian.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-h3 font-bold mb-md z-10">2</div>
+<h4 class="font-h3 text-body-lg font-bold mb-xs">Lihat Status</h4>
+<p class="font-body-sm text-on-surface-variant">Pastikan label "Verified" muncul di profil mereka.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-h3 font-bold mb-md z-10">3</div>
+<h4 class="font-h3 text-body-lg font-bold mb-xs">Transaksi Aman</h4>
+<p class="font-body-sm text-on-surface-variant">Gunakan kanal pembayaran resmi yang disediakan.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center text-h3 font-bold mb-md z-10">4</div>
+<h4 class="font-h3 text-body-lg font-bold mb-xs">Nikmati Wisata</h4>
+<p class="font-body-sm text-on-surface-variant">Berlayar dengan tenang bersama agen terpercaya.</p>
+</div>
+<!-- Line Connector (Desktop) -->
+<div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-primary/30 z-0"></div>
+</div>
+</div>
+</section>
+<!-- Popular Packages (Bento-like Grid) -->
+<section class="py-xxl">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-h2 text-h2 text-primary">Paket Populer</h2>
+<p class="font-body-md text-on-surface-variant">Pilihan terbaik dari agen-agen terverifikasi kami.</p>
+</div>
+<button class="hidden md:block text-primary font-semibold hover:underline">Lihat Semua Paket</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[600px]">
+<!-- Large Card -->
+<div class="md:col-span-7 relative rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious white Phinisi schooner boat sailing gracefully on deep indigo waters in Labuan Bajo. The boat is framed by lush tropical islands and a sunset that casts a warm, golden glow over the wooden decks. The image captures a high-end, exclusive travel vibe with a color palette of deep navy, gold, and vibrant tropical green, emphasizing safety and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgFkIOn9Ng3C3ib1bjfKc_USQKPfMPDepwbGZUDOfLGCVOm9FirBvfZJ4M5Jeyt3M4VO8Sw5Ej-MV2d1NZiILookwHfiWGUpn5zKSjVtHTFOQIWRvDeIoAF2Xuc5WltIbalDCpVIO9egUf5uVFbcqfTL-o7hJAtxbNigSo7uyBf5J49GcvY3zy6VCvBESFHUi9ZmwWnGsZ6UkOAFO5Z1oWa8zOzPt4u-e2MN1T35ts5a7FPFdwWtbxB4eUMc4XYsecTVFX3z7agG8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<span class="inline-flex items-center gap-xs bg-secondary-fixed text-on-secondary-fixed text-caption px-sm py-xs rounded-full w-fit mb-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span> Verified Agent
+                            </span>
+<h3 class="font-h3 text-white text-h3 mb-xs">Premium Sailing: Phinisi Liveaboard</h3>
+<p class="text-white/80 font-body-sm mb-md">3 Hari 2 Malam Jelajah Pulau Komodo &amp; Pink Beach</p>
+<div class="flex justify-between items-center">
+<span class="text-white font-bold text-h3">Rp 4.500.000<span class="text-caption font-normal">/pax</span></span>
+<button class="bg-white text-primary px-lg py-sm rounded-lg font-label-md">Detail Paket</button>
+</div>
+</div>
+</div>
+<!-- Side Grid -->
+<div class="md:col-span-5 grid grid-rows-2 gap-md">
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Crystal clear turquoise waters of a secluded lagoon in Komodo National Park, with colorful coral reefs visible beneath the surface. The bright morning light creates shimmering reflections and a sense of absolute purity and tranquility. The color palette focuses on vibrant teals and pale sands, reinforcing a clean, safe, and professional travel environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW3LWF2ePxbOdKxCYpZ2mV3mued90PPnDZ3P0d1e_i9ji00t0AFflmRjgtt6blopSxIeWyTE52KCf9JFK8QgnxvprwElkOhYYiYWTghA9O0fcVbgI4iPJz8YAwnJ3-RKN871EIgkUYKm8NjAsuP-XKJNTRJ4cQpZhxrypPn3iUDprIoHPD3uKdOJEdOvFMbPS8OV_iOf4z-MysfMUHPHoC2WYfZTkryVk9q1A3Z7elTJKW-6Hsab-UCPwX5GfyTS-SCh6UJeFC22U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-md">
+<h4 class="font-h3 text-white text-body-lg font-bold">One Day Trip Speedboat</h4>
+<p class="text-white/80 text-caption">6 Destinasi dalam 1 hari penuh</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A majestic Komodo dragon resting on the arid, golden grasslands of Rinca Island with the blue ocean in the background. The scene is shot with high clarity and professional photography standards, showing the unique wildlife of Labuan Bajo in its natural habitat. The lighting is warm and natural, using a palette of earthy ochres and deep blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5M_ua5m2eBaAUaglPfLNCA0ca_2HZILpR-PhLqfrfwwGjHm5xF8ZLqaH9Jr2BISJfW3ti7DhLwEd9e6O51kXgxpspmThPLrznhfNzV_zIGNH4ZzDgBy5w33qvK3MSNzsVGvY0rA5uIUbv3LaRQR2XxJJDKWRkjrUw_k53E_ha-MKMuaPiKYVNeHpF05dO5ZYk5WhoO4ffnQPL8EqYA1Jr1WtfsdIxs7qfu9LH8c4knzRi4zs6La7siWp4aF1RXIOh3r5IQbEjJ9g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-md">
+<h4 class="font-h3 text-white text-body-lg font-bold">Wildlife Safari Adventure</h4>
+<p class="text-white/80 text-caption">Eksplorasi Komodo &amp; Rinca Island</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xxl bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-[1280px] mx-auto px-lg grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-2">
+<span class="font-h3 text-h3 font-bold text-primary mb-md block">🌊 LabuanBajo.id</span>
+<p class="font-body-sm text-on-surface-variant max-w-sm mb-lg">
+                    © 2024 LabuanBajo.id - Platform Verifikasi Agen Wisata Resmi. Keamanan Anda adalah prioritas kami dalam mengeksplorasi keindahan timur Indonesia.
+                </p>
+<div class="flex gap-md">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-label-md text-primary mb-md">Tautan Cepat</h5>
+<ul class="flex flex-col gap-sm">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Tentang Kami</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Pusat Bantuan</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary mb-md">Bantuan</h5>
+<ul class="flex flex-col gap-sm">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Hubungi Kami</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Lapor Kendala</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- FAB for Quick Search (Mobile) -->
+<button class="md:hidden fixed bottom-lg right-lg w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</button>
+</body></html>
