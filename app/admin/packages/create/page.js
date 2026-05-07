@@ -11,6 +11,7 @@ export default function CreatePackage() {
   
   const [formData, setFormData] = useState({
     title: "",
+    subtitle: "",
     agent_id: "",
     location: "Labuan Bajo",
     price: "Rp 0",
@@ -18,6 +19,7 @@ export default function CreatePackage() {
     group_size: "10-15 Orang",
     rating: 5,
     review_count: 0,
+    is_popular: false,
     images: [""],
     itinerary: [{ title: "", description: "" }],
     included: [""],
@@ -89,15 +91,27 @@ export default function CreatePackage() {
               <h3 className="font-bold text-on-surface">Informasi Dasar</h3>
             </div>
             <div className="p-6 space-y-4">
-              <div>
-                <label className="block text-sm font-bold text-on-surface mb-2">Judul Paket</label>
-                <input 
-                  type="text" 
-                  required
-                  className="w-full border-gray-200 rounded-md focus:ring-primary focus:border-primary text-sm"
-                  value={formData.title}
-                  onChange={e => setFormData({ ...formData, title: e.target.value })}
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-bold text-on-surface mb-2">Judul Paket</label>
+                  <input 
+                    type="text" 
+                    required
+                    className="w-full border-gray-200 rounded-md focus:ring-primary focus:border-primary text-sm"
+                    value={formData.title}
+                    onChange={e => setFormData({ ...formData, title: e.target.value })}
+                  />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-bold text-on-surface mb-2">Subtitle / Deskripsi Singkat</label>
+                  <input 
+                    type="text" 
+                    className="w-full border-gray-200 rounded-md focus:ring-primary focus:border-primary text-sm"
+                    value={formData.subtitle}
+                    onChange={e => setFormData({ ...formData, subtitle: e.target.value })}
+                    placeholder="Contoh: 3 Hari 2 Malam Jelajah Pulau Komodo"
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
